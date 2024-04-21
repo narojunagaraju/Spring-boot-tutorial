@@ -1,6 +1,7 @@
 package com.example.Spring.boot.tutorial.service;
 
 import com.example.Spring.boot.tutorial.entity.Department;
+import com.example.Spring.boot.tutorial.error.DepartmentNotFoundException;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface DepartmentService {
 
     List<Department> fetchDepartmentList();
 
-    Department fetchDepartmentById(Long departmentId);
+    Department fetchDepartmentById(Long departmentId) throws DepartmentNotFoundException;
 
     void deleteDepartById(Long departmentId);
 
