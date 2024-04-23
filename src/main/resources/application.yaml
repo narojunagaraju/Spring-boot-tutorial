@@ -1,4 +1,15 @@
+server:
+  port: 8080
+
 spring:
+  profiles.active: dev
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
   application:
     name: Spring-boot-tutorial
   datasource:
@@ -12,4 +23,43 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
 welcome:
-  message: Welcome to Spring boot world!!
+  message: Welcome to Spring boot world Dev environment!!
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: qa
+  application:
+    name: Spring-boot-tutorial
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: admin
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/dcbapp
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to Spring boot QA environment!!
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  application:
+    name: Spring-boot-tutorial
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: admin
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/dcbapp
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to Spring boot production environment!!
