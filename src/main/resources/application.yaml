@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: Spring-boot-tutorial
+  datasource:
+    driverClassName: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:dcbapp;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+welcome:
+  message: Welcome to Spring boot world!!
