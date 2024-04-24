@@ -25,6 +25,13 @@ spring:
 welcome:
   message: Welcome to Spring boot world Dev environment!!
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: env,beans
+
 
 ---
 spring:
